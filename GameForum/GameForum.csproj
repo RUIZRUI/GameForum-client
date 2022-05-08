@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2107D7D7-4868-4010-9D45-33D634F94B82}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GameForum</RootNamespace>
+    <AssemblyName>GameForum</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountSetForm.Designer.cs">
+      <DependentUpon>AccountSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AndroidForm.Designer.cs">
+      <DependentUpon>AndroidForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidGame.cs" />
+    <Compile Include="AndroidGameDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AndroidGameDetailForm.Designer.cs">
+      <DependentUpon>AndroidGameDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidIndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AndroidIndexForm.Designer.cs">
+      <DependentUpon>AndroidIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollectionForm.Designer.cs">
+      <DependentUpon>CollectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comment.cs" />
+    <Compile Include="CommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentForm.Designer.cs">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FansForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FansForm.Designer.cs">
+      <DependentUpon>FansForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FollowsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FollowsForm.Designer.cs">
+      <DependentUpon>FollowsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameCollection.cs" />
+    <Compile Include="GameDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameDeleteForm.Designer.cs">
+      <DependentUpon>GameDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameEditForm.Designer.cs">
+      <DependentUpon>GameEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameManageForm.Designer.cs">
+      <DependentUpon>GameManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHelper.cs" />
+    <Compile Include="ImageHelper.cs" />
+    <Compile Include="IOSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOSForm.Designer.cs">
+      <DependentUpon>IOSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOSGame.cs" />
+    <Compile Include="IOSGameDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOSGameDetailForm.Designer.cs">
+      <DependentUpon>IOSGameDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOSIndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOSIndexForm.Designer.cs">
+      <DependentUpon>IOSIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginInfo.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MyComment.cs" />
+    <Compile Include="OnlineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineForm.Designer.cs">
+      <DependentUpon>OnlineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineGame.cs" />
+    <Compile Include="OnlineGameDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineGameDetailForm.Designer.cs">
+      <DependentUpon>OnlineGameDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineIndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineIndexForm.Designer.cs">
+      <DependentUpon>OnlineIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalCenterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalCenterForm.Designer.cs">
+      <DependentUpon>PersonalCenterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelationUser.cs" />
+    <Compile Include="SingleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleForm.Designer.cs">
+      <DependentUpon>SingleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleGame.cs" />
+    <Compile Include="SingleGameDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleGameDetailForm.Designer.cs">
+      <DependentUpon>SingleGameDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleIndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleIndexForm.Designer.cs">
+      <DependentUpon>SingleIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemManagerForm.Designer.cs">
+      <DependentUpon>SystemManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeHelper.cs" />
+    <Compile Include="UserManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManageForm.Designer.cs">
+      <DependentUpon>UserManageForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountSetForm.resx">
+      <DependentUpon>AccountSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AndroidForm.resx">
+      <DependentUpon>AndroidForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AndroidGameDetailForm.resx">
+      <DependentUpon>AndroidGameDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AndroidIndexForm.resx">
+      <DependentUpon>AndroidIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollectionForm.resx">
+      <DependentUpon>CollectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommentForm.resx">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FansForm.resx">
+      <DependentUpon>FansForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FollowsForm.resx">
+      <DependentUpon>FollowsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameDeleteForm.resx">
+      <DependentUpon>GameDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameEditForm.resx">
+      <DependentUpon>GameEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameManageForm.resx">
+      <DependentUpon>GameManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOSForm.resx">
+      <DependentUpon>IOSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOSGameDetailForm.resx">
+      <DependentUpon>IOSGameDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOSIndexForm.resx">
+      <DependentUpon>IOSIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineForm.resx">
+      <DependentUpon>OnlineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineGameDetailForm.resx">
+      <DependentUpon>OnlineGameDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineIndexForm.resx">
+      <DependentUpon>OnlineIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalCenterForm.resx">
+      <DependentUpon>PersonalCenterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleForm.resx">
+      <DependentUpon>SingleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleGameDetailForm.resx">
+      <DependentUpon>SingleGameDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleIndexForm.resx">
+      <DependentUpon>SingleIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemManagerForm.resx">
+      <DependentUpon>SystemManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManageForm.resx">
+      <DependentUpon>UserManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u225.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u251.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u252.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u287.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u354.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u538.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u555.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u657.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\男性-管理员.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u352.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u385.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
