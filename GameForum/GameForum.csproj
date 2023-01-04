@@ -154,6 +154,7 @@
     </Compile>
     <Compile Include="LoginInfo.cs" />
     <Compile Include="MainWindow.cs" />
+    <Compile Include="model\User.cs" />
     <Compile Include="MyComment.cs" />
     <Compile Include="OnlineForm.cs">
       <SubType>Form</SubType>

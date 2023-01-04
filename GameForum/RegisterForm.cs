@@ -49,7 +49,7 @@ namespace GameForum
                 return;
             }
 
-            string url = "http://localhost:8080/forum/Register";
+            string url = "http://localhost:8080/gameforum/v1/user/register";
             string postData = "userName=" + this.userName.Text;
             postData += "&userPass=" + this.userPass.Text;
             postData += "&userEmail=" + this.userEmail.Text;
