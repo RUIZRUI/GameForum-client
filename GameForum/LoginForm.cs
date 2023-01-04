@@ -57,7 +57,7 @@ namespace GameForum
             else
             {
                 // 发送post请求，完成登录验证
-                string url = "http://localhost:8080/forum/Login";
+                string url = "http://localhost:8080/gameforum/v1/user/login";
                 string postData = "userName=" + this.userName.Text + "&userPass=" + this.userPass.Text;
                 string value = HttpHelper.sendPostRequest(url, postData);
 
@@ -66,7 +66,7 @@ namespace GameForum
                 {
                     // 登录成功
                     // 发送get请求，获取用户信息
-                    url = "http://localhost:8080/forum/GetUserInfo?userName=" + this.userName.Text;
+                    url = "http://localhost:8080/gameforum/v1/user/getUserInfo?userName=" + this.userName.Text;
                     value = HttpHelper.sendGetRequest(url);
 
                     message = JObject.Parse(value);
@@ -85,7 +85,7 @@ namespace GameForum
                     // 将登录信息写入配置文件
                     JsonHelper.writeJson("userInfo.json", value);
 
-                    // MessageBox.Show(LoginInfo.CurrentUser.ToString());
+                    MessageBox.Show(LoginInfo.CurrentUser.ToString());
                     this.DialogResult = DialogResult.OK;
                 }
                 else
