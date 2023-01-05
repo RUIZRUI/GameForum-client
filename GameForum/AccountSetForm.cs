@@ -125,7 +125,7 @@ namespace GameForum
         private void confirm_Click(object sender, EventArgs e)
         {
             // 发送post请求，更改个人信息
-            string url = "http://localhost:8080/forum/AccountSet";
+            string url = "http://localhost:8080/gameforum/v1/user/accountSet";
             string postData = "userId=" + LoginInfo.CurrentUser.UserId + "&userName=" + this.userName.Text + "&userEmail=" + this.userEmail.Text + "&userPhone=" + this.userPhone.Text;
             string sex = "";
             if(this.male.Checked == true)

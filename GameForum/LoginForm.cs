@@ -85,7 +85,7 @@ namespace GameForum
                     // 将登录信息写入配置文件
                     JsonHelper.writeJson("userInfo.json", value);
 
-                    MessageBox.Show(LoginInfo.CurrentUser.ToString());
+                    // MessageBox.Show(LoginInfo.CurrentUser.ToString());
                     this.DialogResult = DialogResult.OK;
                 }
                 else
