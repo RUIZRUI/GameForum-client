@@ -94,7 +94,7 @@ namespace GameForum
         /// <returns></returns>
         private List<RelationUser> getFanUser()
         {
-            string url = "http://localhost:8080/forum/GetFans?userId=" + LoginInfo.CurrentUser.UserId;
+            string url = "http://localhost:8080/gameforum/v1/follow/getFans?userId=" + LoginInfo.CurrentUser.UserId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);

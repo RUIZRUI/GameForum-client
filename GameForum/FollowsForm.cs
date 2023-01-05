@@ -95,7 +95,7 @@ namespace GameForum
         /// </summary>
         private List<RelationUser> getFollowUser()
         {
-            string url = "http://localhost:8080/forum/GetFollows?userId=" + LoginInfo.CurrentUser.UserId;
+            string url = "http://localhost:8080/gameforum/v1/follow/getFollows?userId=" + LoginInfo.CurrentUser.UserId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
