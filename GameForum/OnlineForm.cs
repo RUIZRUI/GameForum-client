@@ -17,6 +17,7 @@ namespace GameForum
         private int onlineGameCount;       // 网页游戏数
         private int sortType = 1;           // 排序方式，1表示期望值排序，2表示热度排序，3表示评分排序，默认1
         private bool desc = true;           // 排序顺序，true表示由高到低，false表示由低到高，默认true
+        private string rootDir = "D:\\MySQL";
 
         public OnlineForm()
         {
@@ -33,7 +34,7 @@ namespace GameForum
         private List<OnlineGame> getAllOnlineGame()
         {
             // 发送get请求
-            string url = "http://localhost:8080/forum/GetAllOnlineGame?sortType=" + sortType + "&desc=" + desc.ToString();
+            string url = "http://localhost:8080/gameforum/v1/game/getAllOnlineGame?sortType=" + sortType + "&desc=" + desc.ToString();
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
@@ -80,7 +81,7 @@ namespace GameForum
                 // 游戏图像
                 PictureBox gameImg = new PictureBox();
                 ((System.ComponentModel.ISupportInitialize)(gameImg)).BeginInit();
-                gameImg.Load(onlineGame.Game_img);
+                gameImg.Load(rootDir + onlineGame.Game_img);
                 gameImg.Location = new Point(20, 35);
                 gameImg.Name = "gameImg" + index;
                 gameImg.Size = new Size(150, 90);

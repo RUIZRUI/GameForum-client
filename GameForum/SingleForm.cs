@@ -18,6 +18,7 @@ namespace GameForum
         private int singleGameCount;        // 单机游戏数
         private int sortType = 1;           // 排序方式，1表示时间排序，2表示热度排序，3表示评分排序，默认1
         private bool desc = true;           // 排序顺序，true表示由高到低，false表示由低到高，默认true
+        private string rootDir = "D:\\MySQL";
 
         public SingleForm()
         {
@@ -88,7 +89,7 @@ namespace GameForum
         private List<SingleGame> getAllSingleGame()
         {
             // 发送get请求
-            string url = "http://localhost:8080/forum/GetAllSingleGame?sortType=" + sortType + "&desc=" + desc.ToString();
+            string url = "http://localhost:8080/gameforum/v1/game/getAllSingleGame?sortType=" + sortType + "&desc=" + desc.ToString();
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
@@ -136,7 +137,7 @@ namespace GameForum
                 // 游戏图像
                 PictureBox gameImg = new PictureBox();
                 ((System.ComponentModel.ISupportInitialize)(gameImg)).BeginInit();
-                gameImg.Load(singleGame.Game_img);
+                gameImg.Load(rootDir + singleGame.Game_img);
                 gameImg.Location = new Point(20, 13);
                 gameImg.Name = "gameImg" + index;
                 gameImg.Size = new Size(110, 134);
