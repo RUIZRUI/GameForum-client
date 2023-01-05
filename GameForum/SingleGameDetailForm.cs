@@ -16,6 +16,7 @@ namespace GameForum
     {
         private string gameId;
         private int commentCount;
+        private string rootDir = "D:\\MySQL";
 
         public SingleGameDetailForm()
         {
@@ -32,7 +33,7 @@ namespace GameForum
             initHide();
             fillDataWithGame();             // 游戏信息
             fillDataWithIntroduction();     // 游戏简介
-            commentCount = fillDataWithComment();   // 游戏评论
+            // commentCount = fillDataWithComment();   // 游戏评论
         }
 
 
@@ -46,7 +47,7 @@ namespace GameForum
 
         private SingleGame getSingleGame()
         {
-            string url = "http://localhost:8080/forum/GetSingleGame?gameId=" + gameId;
+            string url = "http://localhost:8080/gameforum/v1/game/getSingleGame?gameId=" + gameId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
@@ -92,7 +93,7 @@ namespace GameForum
             // 游戏图像
             PictureBox gameImg = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)(gameImg)).BeginInit();
-            gameImg.Load(singleGame.Game_img);
+            gameImg.Load(rootDir + singleGame.Game_img);
             gameImg.Location = new Point(20, 13);
             gameImg.Name = "gameImg";
             gameImg.Size = new Size(110, 134);
@@ -556,7 +557,7 @@ namespace GameForum
         private string getGameIntroduction()
         {
             // 发送get请求
-            string url = "http://localhost:8080/forum/GetGameIntroduction?gameId=" + this.gameId;
+            string url = "http://localhost:8080/gameforum/v1/game/getGameIntroduction?gameId=" + this.gameId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
