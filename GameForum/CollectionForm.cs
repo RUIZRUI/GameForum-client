@@ -113,7 +113,7 @@ namespace GameForum
         private List<GameCollection> getCollection()
         {
             // 发送get请求
-            string url = "http://localhost:8080/forum/GetCollection?userId=" + LoginInfo.CurrentUser.UserId;
+            string url = "http://localhost:8080/gameforum/v1/collection/getCollection?userId=" + LoginInfo.CurrentUser.UserId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
