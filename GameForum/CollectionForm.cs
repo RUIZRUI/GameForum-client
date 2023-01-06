@@ -16,7 +16,8 @@ namespace GameForum
 {
     public partial class CollectionForm : Form
     {
-        private int collectionCount;    // 收藏数     
+        private int collectionCount;    // 收藏数
+        private string rootDir = "D:\\MySQL";
 
         public CollectionForm()
         {
@@ -156,7 +157,7 @@ namespace GameForum
                 // collectionPic    游戏图像
                 PictureBox collectionPic = new PictureBox();
                 ((System.ComponentModel.ISupportInitialize)(collectionPic)).BeginInit();
-                collectionPic.Load(collection.Game_img);        // 加载图像
+                collectionPic.Load(rootDir + collection.Game_img);        // 加载图像
                 collectionPic.Name = "collectionPic" + index;
                 collectionPic.SizeMode = PictureBoxSizeMode.StretchImage;
                 if(collection.Game_belong != "单机游戏")

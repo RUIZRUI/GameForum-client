@@ -275,7 +275,7 @@ namespace GameForum
                 string gameId = btnName.Substring(12);
 
                 // 发送post请求，添加收藏
-                string url = "http://localhost:8080/forum/AddCollection";
+                string url = "http://localhost:8080/gameforum/v1/collection/addCollection";
                 string postData = "userId=" + LoginInfo.CurrentUser.UserId + "&gameId=" + gameId;
 
                 string value = HttpHelper.sendPostRequest(url, postData);
