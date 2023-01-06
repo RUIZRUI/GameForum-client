@@ -68,7 +68,7 @@ namespace GameForum
         private List<RelationUser> getUser()
         {
             // get 请求
-            string url = "http://localhost:8080/forum/GetUsersBySystem?userId=" + LoginInfo.CurrentUser.UserId + "&userName=" + LoginInfo.CurrentUser.UserName;
+            string url = "http://localhost:8080/gameforum/v1/system/getUsersBySystem?userId=" + LoginInfo.CurrentUser.UserId + "&userName=" + LoginInfo.CurrentUser.UserName;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
