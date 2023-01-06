@@ -16,6 +16,7 @@ namespace GameForum
     {
         private string gameId;
         private int commentCount;
+        private string rootDir = "D:\\MySQL";
 
         public OnlineGameDetailForm()
         {
@@ -29,13 +30,13 @@ namespace GameForum
             this.gameId = gameId;
             fillDataWithGame();
             fillDataWithIntroduction();
-            commentCount = fillDataWithComment();
+            // commentCount = fillDataWithComment();
         }
 
 
         private OnlineGame getOnlineGame()
         {
-            string url = "http://localhost:8080/forum/GetOnlineGame?gameId=" + gameId;
+            string url = "http://localhost:8080/gameforum/v1/game/getOnlineGame?gameId=" + gameId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
@@ -79,7 +80,7 @@ namespace GameForum
             // 游戏图像
             PictureBox gameImg = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)(gameImg)).BeginInit();
-            gameImg.Load(onlineGame.Game_img);
+            gameImg.Load(rootDir + onlineGame.Game_img);
             gameImg.Location = new Point(20, 35);
             gameImg.Name = "gameImg";
             gameImg.Size = new Size(150, 90);
@@ -470,7 +471,7 @@ namespace GameForum
         private string getGameIntroduction()
         {
             // 发送get请求
-            string url = "http://localhost:8080/forum/GetGameIntroduction?gameId=" + this.gameId;
+            string url = "http://localhost:8080/gameforum/v1/game/getGameIntroduction?gameId=" + this.gameId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
