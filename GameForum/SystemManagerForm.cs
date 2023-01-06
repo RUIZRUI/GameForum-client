@@ -69,7 +69,7 @@ namespace GameForum
         private void getSystemInfo()
         {
             // 发送get请求
-            string url = "http://localhost:8080/forum/GetSystemInfo?userId=" + LoginInfo.CurrentUser.UserId + "&userName=" + LoginInfo.CurrentUser.UserName;
+            string url = "http://localhost:8080/gameforum/v1/system/getSystemInfo?userId=" + LoginInfo.CurrentUser.UserId + "&userName=" + LoginInfo.CurrentUser.UserName;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
