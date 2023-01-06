@@ -33,7 +33,7 @@ namespace GameForum
             initHide();
             fillDataWithGame();             // 游戏信息
             fillDataWithIntroduction();     // 游戏简介
-            // commentCount = fillDataWithComment();   // 游戏评论
+            commentCount = fillDataWithComment();   // 游戏评论
         }
 
 
@@ -298,7 +298,7 @@ namespace GameForum
         private List<Comment> getCommentList()
         {
             // 发送get请求
-            string url = "http://localhost:8080/forum/GetCommentByGame?gameId=" + this.gameId;
+            string url = "http://localhost:8080/gameforum/v1/comment/getCommentByGame?gameId=" + this.gameId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
@@ -452,7 +452,7 @@ namespace GameForum
                 if (content != "")
                 {
                     // 发送post请求，提交评论
-                    string url = "http://localhost:8080/forum/PublishComment";
+                    string url = "http://localhost:8080/gameforum/v1/comment/publishComment";
                     string postData = "userIdFrom=" + LoginInfo.CurrentUser.UserId + "&gameId=" + this.gameId + "&content=" + content;
 
                     string value = HttpHelper.sendPostRequest(url, postData);

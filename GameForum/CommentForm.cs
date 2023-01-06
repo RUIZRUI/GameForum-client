@@ -104,7 +104,7 @@ namespace GameForum
         /// <returns></returns>
         private List<MyComment> GetCommentToMe(string commentType)
         {
-            string url = "http://localhost:8080/forum/" + commentType + "?userId=" + LoginInfo.CurrentUser.UserId;
+            string url = "http://localhost:8080/gameforum/v1/comment/" + commentType + "?userId=" + LoginInfo.CurrentUser.UserId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
@@ -129,7 +129,7 @@ namespace GameForum
         /// <returns></returns>
         private int fillDataWithCommentToMe()
         {
-            List<MyComment> commentList = GetCommentToMe("GetCommentToMe");
+            List<MyComment> commentList = GetCommentToMe("getCommentToMe");
             if (commentList == null)
             {
                 return 0;
@@ -234,7 +234,7 @@ namespace GameForum
         /// <returns></returns>
         private int fillDataWithCommentFromMe()
         {
-            List<MyComment> commentList = GetCommentToMe("GetCommentFromMe");
+            List<MyComment> commentList = GetCommentToMe("getCommentFromMe");
             if (commentList == null)
             {
                 return 0;
