@@ -30,7 +30,7 @@ namespace GameForum
             this.gameId = gameId;
             fillDataWithGame();
             fillDataWithIntroduction();
-            // commentCount = fillDataWithComment();
+            commentCount = fillDataWithComment();
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace GameForum
         private List<Comment> getCommentList()
         {
             // 发送get请求
-            string url = "http://localhost:8080/forum/GetCommentByGame?gameId=" + gameId;
+            string url = "http://localhost:8080/gameforum/v1/comment/getCommentByGame?gameId=" + gameId;
             string value = HttpHelper.sendGetRequest(url);
 
             JObject message = JObject.Parse(value);
@@ -374,7 +374,7 @@ namespace GameForum
                 commentTime.ForeColor = Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(172)))), ((int)(((byte)(172)))));
                 commentTime.Location = new Point(686, 32);
                 commentTime.Name = "commentTime" + index;
-                commentTime.Text = comment.Comment_time.ToString("yyyy-MM-dd HH:mm");
+                commentTime.Text = TimeHelper.GetTime(comment.Comment_time, true).ToString("yyyy-MM-dd HH:mm");
                 commentPanel.Controls.Add(commentTime);
 
 
@@ -404,7 +404,31 @@ namespace GameForum
             else
             {
                 // 注册用户
-                MessageBox.Show("功能开发中", "评论提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string content = this.evaluationContent.Text.Trim();
+                if (content != "")
+                {
+                    // 发送post请求，提交评论
+                    string url = "http://localhost:8080/gameforum/v1/comment/publishComment";
+                    string postData = "userIdFrom=" + LoginInfo.CurrentUser.UserId + "&gameId=" + this.gameId + "&content=" + content;
+
+                    string value = HttpHelper.sendPostRequest(url, postData);
+                    JObject message = JObject.Parse(value);
+                    string result = message["result"].ToString();
+                    if (result == "success")
+                    {
+                        // 评论成功，刷新评论列表
+                        MessageBox.Show("评论成功");
+                        this.evaluationContent.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("评论失败：" + result, "评论提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("评论内容不能为空", "评论提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -441,7 +465,29 @@ namespace GameForum
                 // 注册用户
                 string btnName = ((Button)sender).Name;
                 int userId = int.Parse(btnName.Substring(10));
-                MessageBox.Show("功能开发中 - " + userId, "关注提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (Convert.ToInt32(LoginInfo.CurrentUser.UserId) == userId)
+                {
+                    MessageBox.Show("您不能关注自己", "关注提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // 发送post请求
+                string url = "http://localhost:8080/gameforum/v1/follow/followUser";
+                string postData = "idolUserId=" + userId + "&fanUserId=" + LoginInfo.CurrentUser.UserId;
+
+                string value = HttpHelper.sendPostRequest(url, postData);
+                JObject message = JObject.Parse(value);
+                string result = message["result"].ToString();
+                if (result == "success")
+                {
+                    MessageBox.Show("关注成功", "关注用户", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoginInfo.CurrentUser.FollowNum = LoginInfo.CurrentUser.FollowNum + 1;
+                }
+                else
+                {
+                    MessageBox.Show("关注失败: " + result, "关注用户", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

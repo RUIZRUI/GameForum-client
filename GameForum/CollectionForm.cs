@@ -260,7 +260,7 @@ namespace GameForum
             else
             {
                 // 发送post请求，清空收藏夹
-                string url = "http://localhost:8080/forum/ClearCollection";
+                string url = "http://localhost:8080/gameforum/v1/collection/clearCollection";
                 string postData = "userId=" + LoginInfo.CurrentUser.UserId;
 
                 string value = HttpHelper.sendPostRequest(url, postData);
@@ -286,8 +286,8 @@ namespace GameForum
             string gameId = labelName.Substring(17);
 
             // 发送post请求，取消收藏
-            string url = "http://localhost:8080/forum/CancelCollection";
-            string postData = "userId=" + LoginInfo.CurrentUser.UserId + "&gameId=" + gameId;
+            string url = "http://localhost:8080/gameforum/v1/collection/cancelCollection";
+            string postData = "userId=" + LoginInfo.CurrentUser.UserId + "&gameId=" + gameId; 
 
             string value = HttpHelper.sendPostRequest(url, postData);
             JObject message = JObject.Parse(value);

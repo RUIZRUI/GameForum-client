@@ -188,7 +188,7 @@ namespace GameForum
             int user_id = int.Parse(pictureBoxName.Substring(9));
 
             // 发送Post请求，删除用户
-            string url = "http://localhost:8080/forum/UserDelete";
+            string url = "http://localhost:8080/gameforum/v1/user/userDelete";
             string postData = "userId=" + LoginInfo.CurrentUser.UserId + "&userName=" + LoginInfo.CurrentUser.UserName;
             postData += "&deletedUserId=" + user_id;
 

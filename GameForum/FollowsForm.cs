@@ -186,7 +186,7 @@ namespace GameForum
             int userId = Convert.ToInt32(btnName.Substring(13));
 
             // 发送post请求，取消关注
-            string url = "http://localhost:8080/forum/CancelFollow";
+            string url = "http://localhost:8080/gameforum/v1/follow/cancelFollow";
             string postData = "idolUserId=" + userId + "&fanUserId=" + LoginInfo.CurrentUser.UserId;
             string value = HttpHelper.sendPostRequest(url, postData);
 

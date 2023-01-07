@@ -418,7 +418,7 @@ namespace GameForum
             int commentId = int.Parse(pictureBoxName.Substring(9));
 
             // 发送post请求，删除评论
-            string url = "http://localhost:8080/forum/DeleteComment";
+            string url = "http://localhost:8080/gameforum/v1/comment/deleteComment";
             string postData = "commentId=" + commentId + "&userId=" + LoginInfo.CurrentUser.UserId;
 
             string value = HttpHelper.sendPostRequest(url, postData);
@@ -455,7 +455,7 @@ namespace GameForum
             }
 
             // 发送post请求，清空用户发布的评论
-            string url = "http://localhost:8080/forum/ClearCommentByUser";
+            string url = "http://localhost:8080/gameforum/v1/comment/clearCommentByUser";
             string postData = "userId=" + LoginInfo.CurrentUser.UserId;
             string value = HttpHelper.sendPostRequest(url, postData);
 
