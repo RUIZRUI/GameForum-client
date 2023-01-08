@@ -60,7 +60,8 @@
             this.gameLanguageLabel = new System.Windows.Forms.Label();
             this.gameReleaseDateLabel = new System.Windows.Forms.Label();
             this.onlineRadioButton = new System.Windows.Forms.RadioButton();
-            this.phoneRadioButton = new System.Windows.Forms.RadioButton();
+            this.androidRadioButton = new System.Windows.Forms.RadioButton();
+            this.iosRadioButton = new System.Windows.Forms.RadioButton();
             this.singleRadioButton = new System.Windows.Forms.RadioButton();
             this.gameType = new System.Windows.Forms.TextBox();
             this.gameTypeLabel = new System.Windows.Forms.Label();
@@ -177,7 +178,8 @@
             this.backPanel.Controls.Add(this.gameScoreLabel);
             this.backPanel.Controls.Add(this.panel1);
             this.backPanel.Controls.Add(this.onlineRadioButton);
-            this.backPanel.Controls.Add(this.phoneRadioButton);
+            this.backPanel.Controls.Add(this.androidRadioButton);
+            this.backPanel.Controls.Add(this.iosRadioButton);
             this.backPanel.Controls.Add(this.singleRadioButton);
             this.backPanel.Controls.Add(this.gameType);
             this.backPanel.Controls.Add(this.gameTypeLabel);
@@ -444,36 +446,49 @@
             // 
             this.onlineRadioButton.AutoSize = true;
             this.onlineRadioButton.Font = new System.Drawing.Font("宋体", 11F);
-            this.onlineRadioButton.Location = new System.Drawing.Point(707, 136);
+            this.onlineRadioButton.Location = new System.Drawing.Point(794, 136);
             this.onlineRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.onlineRadioButton.Name = "onlineRadioButton";
-            this.onlineRadioButton.Size = new System.Drawing.Size(106, 23);
-            this.onlineRadioButton.TabIndex = 7;
+            this.onlineRadioButton.Size = new System.Drawing.Size(123, 26);
+            this.onlineRadioButton.TabIndex = 8;
             this.onlineRadioButton.TabStop = true;
             this.onlineRadioButton.Text = "网页游戏";
             this.onlineRadioButton.UseVisualStyleBackColor = true;
             // 
-            // phoneRadioButton
+            // androidRadioButton
             // 
-            this.phoneRadioButton.AutoSize = true;
-            this.phoneRadioButton.Font = new System.Drawing.Font("宋体", 11F);
-            this.phoneRadioButton.Location = new System.Drawing.Point(420, 136);
-            this.phoneRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.phoneRadioButton.Name = "phoneRadioButton";
-            this.phoneRadioButton.Size = new System.Drawing.Size(239, 23);
-            this.phoneRadioButton.TabIndex = 6;
-            this.phoneRadioButton.TabStop = true;
-            this.phoneRadioButton.Text = "手机游戏（安卓和苹果）";
-            this.phoneRadioButton.UseVisualStyleBackColor = true;
+            this.androidRadioButton.AutoSize = true;
+            this.androidRadioButton.Font = new System.Drawing.Font("宋体", 11F);
+            this.androidRadioButton.Location = new System.Drawing.Point(470, 136);
+            this.androidRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.androidRadioButton.Name = "androidRadioButton";
+            this.androidRadioButton.Size = new System.Drawing.Size(123, 26);
+            this.androidRadioButton.TabIndex = 6;
+            this.androidRadioButton.TabStop = true;
+            this.androidRadioButton.Text = "安卓游戏";
+            this.androidRadioButton.UseVisualStyleBackColor = true;
+            //
+            // iosRadioButton
+            //
+            this.iosRadioButton.AutoSize = true;
+            this.iosRadioButton.Font = new System.Drawing.Font("宋体", 11F);
+            this.iosRadioButton.Location = new System.Drawing.Point(632, 136);
+            this.iosRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iosRadioButton.Name = "iosRadioButton";
+            this.iosRadioButton.Size = new System.Drawing.Size(123, 26);
+            this.iosRadioButton.TabIndex = 7;
+            this.iosRadioButton.TabStop = true;
+            this.iosRadioButton.Text = "苹果游戏";
+            this.iosRadioButton.UseVisualStyleBackColor = true;
             // 
             // singleRadioButton
             // 
             this.singleRadioButton.AutoSize = true;
             this.singleRadioButton.Font = new System.Drawing.Font("宋体", 11F);
-            this.singleRadioButton.Location = new System.Drawing.Point(273, 136);
+            this.singleRadioButton.Location = new System.Drawing.Point(308, 136);
             this.singleRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.singleRadioButton.Name = "singleRadioButton";
-            this.singleRadioButton.Size = new System.Drawing.Size(106, 23);
+            this.singleRadioButton.Size = new System.Drawing.Size(123, 26);
             this.singleRadioButton.TabIndex = 5;
             this.singleRadioButton.TabStop = true;
             this.singleRadioButton.Text = "单机游戏";
@@ -622,7 +637,8 @@
         private System.Windows.Forms.Panel backPanel;
         private System.Windows.Forms.Button onlineBtn;
         private System.Windows.Forms.RadioButton onlineRadioButton;
-        private System.Windows.Forms.RadioButton phoneRadioButton;
+        private System.Windows.Forms.RadioButton androidRadioButton;
+        private System.Windows.Forms.RadioButton iosRadioButton;
         private System.Windows.Forms.RadioButton singleRadioButton;
         private System.Windows.Forms.TextBox gameType;
         private System.Windows.Forms.Label gameTypeLabel;

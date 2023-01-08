@@ -52,7 +52,8 @@ namespace GameForum
         {
             this.gameName.Text = "";
             this.singleRadioButton.Checked = false;
-            this.phoneRadioButton.Checked = false;
+            this.androidRadioButton.Checked = false;
+            this.iosRadioButton.Checked = false;
             this.onlineRadioButton.Checked = false;
             this.gameType.Text = "";
             this.gameRelease.Text = "";
@@ -77,16 +78,20 @@ namespace GameForum
             }
 
             // 发送Post请求，发布游戏
-            string url = "http://localhost:8080/forum/GamePublish";
+            string url = "http://localhost:8080/gameforum/v1/game/gamePublish";
             string postData = "userId=" + LoginInfo.CurrentUser.UserId + "&userName=" + LoginInfo.CurrentUser.UserName;
             postData += "&gameName=" + this.gameName.Text;
             if (singleRadioButton.Checked)
             {
                 postData += "&gameBelong=单机游戏";
             }
-            else if (phoneRadioButton.Checked)
+            else if (androidRadioButton.Checked)
             {
-                postData += "&gameBelong=移动手游";
+                postData += "&gameBelong=安卓游戏";
+            }
+            else if (iosRadioButton.Checked)
+            {
+                postData += "&gameBelong=苹果游戏";
             }
             else if (onlineRadioButton.Checked)
             {
