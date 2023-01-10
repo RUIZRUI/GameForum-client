@@ -58,7 +58,7 @@
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(181, 40);
             this.title.TabIndex = 0;
-            this.title.Text = "大工论坛";
+            this.title.Text = "游戏论坛";
             // 
             // userName
             // 
