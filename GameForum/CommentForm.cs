@@ -355,7 +355,7 @@ namespace GameForum
 
 
         /// <summary>
-        /// 转到发给的评论
+        /// 转到发给我的评论
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
